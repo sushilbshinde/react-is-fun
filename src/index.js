@@ -61,13 +61,13 @@ class Library extends React.Component {
                 <h1>The library is {this.state.open ? 'open' : 'closed' }</h1>
                 {this.state.loading 
                     ? "loading..."
-                    : <div>
+                    : <div key={product.id}>
                         {this.state.data.map(product => {
                             return (
                                 <div>
                                     <h3>Library product of the week!</h3>
                                     <h4>{product.name}</h4>
-                                    <img src={product.image} height={100} />
+                                    <img alt={product.name} src={product.image} height={100} />
                                 </div>
                             )
                         })}
